@@ -1,0 +1,45 @@
+{
+  "name": "your-ionic-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "root": "src",
+  "projectType": "application",
+  "gulp": {
+    "fileConfig": "./gulpfile.js",
+    "tasks": {}
+  },
+  "architect": {
+    "build": {
+      "builder": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "www",
+        "index": "index.html",
+        "main": "main.ts",
+        "polyfills": "polyfills.ts",
+        "tsConfig": "tsconfig.app.json",
+        "aot": false,
+        "assets": [
+          "src/favicon.ico",
+          "src/assets"
+        ],
+        "styles": [
+          "src/styles.css"
+        ],
+        "scripts": []
+      }
+    },
+    "serve": {
+      "builder": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "your-ionic-app:build"
+      }
+    }
+  },
+  "defaultProject": "your-ionic-app",
+  "server": {
+    "host": "localhost",
+    "port": 8100
+  }
+}
